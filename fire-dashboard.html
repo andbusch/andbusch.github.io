@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire Spread Animation Dashboard - Andrew Busch</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .project-header {
+            background: #2c3e50;
+            color: white;
+            padding: 4rem 0 2rem;
+            margin-top: 60px;
+        }
+        
+        .project-hero {
+            text-align: center;
+        }
+        
+        .project-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .demo-section {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+        
+        .demo-placeholder {
+            background: #ddd;
+            border-radius: 10px;
+            padding: 4rem 2rem;
+            text-align: center;
+            color: #666;
+            margin: 2rem 0;
+        }
+        
+        .project-details {
+            padding: 4rem 0;
+        }
+        
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .detail-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .detail-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .back-link {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 2rem;
+            transition: background 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Andrew Busch</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="project-header">
+            <div class="container">
+                <div class="project-hero">
+                    <h1>Fire Spread Animation Dashboard</h1>
+                    <p>A client-facing web application for visualizing fire spread simulations with real-time animation capabilities and secure authentication.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <div class="container">
+                <h2>Project Demo</h2>
+                <div class="demo-placeholder">
+                    <h3>🎬 Demo Video/GIF Placeholder</h3>
+                    <p>Interactive fire spread animation showing real-time simulation data with map overlays and temporal controls.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-details">
+            <div class="container">
+                <h2>Project Overview</h2>
+                <p>Developed a comprehensive fire spread animation dashboard for Filsinger Energy Partners to share simulation results with clients. The application provides an intuitive interface for visualizing complex fire behavior data with optimized performance and secure access controls.</p>
+                
+                <div class="details-grid">
+                    <div class="detail-card">
+                        <h3>🎯 Challenge</h3>
+                        <p>Clients needed an accessible way to view and interact with fire spread simulation data. The solution required real-time performance, intuitive controls, and secure authentication to protect sensitive data.</p>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <h3>💡 Solution</h3>
+                        <p>Built a Next.js application with Deck.gl for high-performance map visualizations, implemented Auth.js for secure client authentication, and optimized rendering for minimal latency.</p>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <h3>🚀 Key Features</h3>
+                        <ul>
+                            <li>Real-time fire spread animation</li>
+                            <li>Interactive map controls</li>
+                            <li>Secure client authentication</li>
+                            <li>Performance-optimized rendering</li>
+                            <li>Responsive design</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <h3>📊 Impact</h3>
+                        <p>Streamlined client communication and data sharing, reducing the time needed for result presentation and enabling clients to make informed decisions about fire risk management.</p>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <h3>🛠 Tech Stack</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">Deck.gl</span>
+                            <span class="tech-tag">Shadcn</span>
+                            <span class="tech-tag">Auth.js</span>
+                            <span class="tech-tag">Vercel</span>
+                            <span class="tech-tag">TypeScript</span>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <h3>🎓 Skills Learned</h3>
+                        <ul>
+                            <li>WebGL-based data visualization</li>
+                            <li>Performance optimization techniques</li>
+                            <li>Authentication implementation</li>
+                            <li>Client-facing application design</li>
+                            <li>Real-time data rendering</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <a href="index.html#projects" class="back-link">← Back to Projects</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Andrew Busch. All rights reserved.</p>
+    </footer>
+</body>
+</html>
