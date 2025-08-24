@@ -276,6 +276,7 @@ function initFractalBackground() {
     canvas.style.left = '0';
     canvas.style.width = '100%';
     canvas.style.height = '100%';
+    canvas.style.objectFit = 'cover';
     canvas.style.zIndex = '1';
     canvas.style.pointerEvents = 'none';
     
@@ -283,11 +284,16 @@ function initFractalBackground() {
         const rect = heroSection.getBoundingClientRect();
         const dpr = window.devicePixelRatio || 1;
         
-        // Set actual canvas resolution (high-DPI)
-        canvas.width = rect.width * dpr;
-        canvas.height = rect.height * dpr;
+        // Generate fractals with a consistent 16:9 aspect ratio for proper cropping
+        // Use a base resolution that ensures good quality
+        const baseWidth = 1920;
+        const baseHeight = 1080;
         
-        // Set display size (CSS pixels)
+        // Set actual canvas resolution (high-DPI) with consistent aspect ratio
+        canvas.width = baseWidth * dpr;
+        canvas.height = baseHeight * dpr;
+        
+        // Set display size (CSS pixels) - object-fit: cover will handle the cropping
         canvas.style.width = rect.width + 'px';
         canvas.style.height = rect.height + 'px';
         
