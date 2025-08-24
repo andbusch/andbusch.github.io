@@ -7,10 +7,13 @@ window.siteConfig = {
     
     // Links
     links: {
-        resume: "https://drive.google.com/file/d/1WeQdk3bBCgDyhE8vC-eh2ms8twR-pNJc/view?usp=sharing",
+        resume: "https://drive.google.com/file/d/18Demj3pXeiHsssgaDaFXweJMKG0dNiNJ/view?usp=sharing",
         github: "https://github.com/andbusch",
         linkedin: "https://linkedin.com/in/andrewbusch472"
     },
+    
+    // Favicon
+    favicon: "https://img.icons8.com/isometric/30/shark.png",
     
     // GitHub Icon SVG
     githubIcon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -44,6 +47,12 @@ window.generateNavigation = function(currentPage = 'index') {
     `;
 };
 
+// Function to generate favicon link
+window.generateFavicon = function() {
+    const config = window.siteConfig;
+    return `<link rel="icon" type="image/png" href="${config.favicon}">`;
+};
+
 // Function to generate contact links
 window.generateContactLinks = function() {
     const config = window.siteConfig;
@@ -53,5 +62,18 @@ window.generateContactLinks = function() {
         <a href="${config.links.github}" target="_blank">GitHub</a>
         <a href="${config.links.linkedin}" target="_blank">LinkedIn</a>
         <a href="${config.links.resume}" target="_blank" class="resume-button">View Resume</a>
+    `;
+};
+
+// Function to generate footer
+window.generateFooter = function() {
+    const currentYear = new Date().getFullYear();
+    const config = window.siteConfig;
+    
+    return `
+        <p>&copy; ${currentYear} ${config.name}. All rights reserved.</p>
+        <p class="icon-credit">
+            <a target="_blank" href="https://icons8.com/icon/E9w33sCLXV8R/shark">Shark</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+        </p>
     `;
 };
