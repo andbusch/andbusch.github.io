@@ -229,6 +229,45 @@ class FractalGenerator {
         this.ctx.putImageData(imageData, 0, 0);
         this.ctx.restore();
     }
+
+    // generate() {
+    //     const scale = 0.5; // Render at 50% resolution. Adjust as needed.
+    //     const renderWidth = this.canvas.width * scale;
+    //     const renderHeight = this.canvas.height * scale;
+
+    //     // Create a temporary, offscreen canvas for rendering
+    //     const offscreenCanvas = document.createElement('canvas');
+    //     offscreenCanvas.width = renderWidth;
+    //     offscreenCanvas.height = renderHeight;
+    //     const offscreenCtx = offscreenCanvas.getContext('2d');
+        
+    //     const imageData = offscreenCtx.createImageData(renderWidth, renderHeight);
+    //     const data = imageData.data;
+        
+    //     const fractalFunction = this.fractals[this.options.fractalType];
+        
+    //     // Perform the expensive calculations on the smaller grid
+    //     for (let y = 0; y < renderHeight; y++) {
+    //         for (let x = 0; x < renderWidth; x++) {
+    //             const iterations = fractalFunction(x, y, renderWidth, renderHeight);
+    //             const color = this.getColor(iterations);
+    //             const pixelIndex = (y * renderWidth + x) * 4;
+                
+    //             data[pixelIndex] = color[0];
+    //             data[pixelIndex + 1] = color[1];
+    //             data[pixelIndex + 2] = color[2];
+    //             data[pixelIndex + 3] = 255;
+    //         }
+    //     }
+        
+    //     offscreenCtx.putImageData(imageData, 0, 0);
+
+    //     // Now, draw the small canvas onto your main, visible canvas.
+    //     // The GPU handles the scaling, which is extremely fast.
+    //     this.ctx.imageSmoothingEnabled = true; // Optional: for smoother scaling
+    //     this.ctx.imageSmoothingQuality = 'high'; // Optional
+    //     this.ctx.drawImage(offscreenCanvas, 0, 0, this.canvas.width, this.canvas.height);
+    // }
     
     randomize() {        
         // always use mandelbrot set
@@ -283,6 +322,9 @@ function initFractalBackground() {
     function resizeCanvas() {
         const rect = heroSection.getBoundingClientRect();
         const dpr = window.devicePixelRatio || 1;
+
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        const effectiveDpr = isMobile ? Math.min(dpr, 1.5) : dpr;
         
         // Use screen dimensions but ensure minimum coverage for cropping
         // Slightly oversized to allow object-fit: cover to work properly
@@ -290,8 +332,8 @@ function initFractalBackground() {
         const renderHeight = rect.height * 1.1;
         
         // Set actual canvas resolution (high-DPI) 
-        canvas.width = renderWidth * dpr;
-        canvas.height = renderHeight * dpr;
+        canvas.width = renderWidth * effectiveDpr;
+        canvas.height = renderHeight * effectiveDpr;
         
         // Set display size (CSS pixels) - object-fit: cover will handle the cropping
         canvas.style.width = rect.width + 'px';
