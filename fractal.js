@@ -341,7 +341,7 @@ function initFractalBackground() {
         
         // Scale the drawing context to match device pixel ratio
         const ctx = canvas.getContext('2d');
-        ctx.scale(dpr, dpr);
+        ctx.scale(effectiveDpr, effectiveDpr);
     }
     
     heroSection.style.position = 'relative';
